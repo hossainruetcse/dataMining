@@ -10,9 +10,11 @@ def crawl_url(url,page):
     items=response.json()['items']
     for item in items:
         #print(item['display_name'])
-        file.write(str(item['display_name'])+"  "+item['url']+"\n")
+        file.write(str(item['display_name'])+"         "+item['url']+"\n")
 
 
+file.write("Display Name,          Profile Link\n")
+file.write("....................................\n")
 
 for i in range(1,8):
     crawl_url(url,i)
